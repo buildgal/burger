@@ -1,4 +1,4 @@
 
-INSERT burgers "Quinoa with aoli sauce", true
-INSERT "Beyond Burger with Avocado", false 
-INSERT "King Byron's BBQ Burger", true 
+INSERT INTO burgers (burger_name) VALUES ('Quinoa with aoli sauce');
+INSERT INTO burgers (burger_name) VALUES ('Beyond Burger with Avocado');
+INSERT INTO burgers (nburger_name, devoured) VALUES ("King Byron's BBQ Burger", true);
