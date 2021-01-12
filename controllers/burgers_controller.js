@@ -15,8 +15,8 @@ router.get("/", function(req, res) {
   });
   
   router.post("/api/burgers", function(req, res) {
-    burger.create([
-      "name", "sleepy"
+    burger.insertOne([
+      "name", "sleepy" //connect this data to what is pulled in the database 
     ], [
       req.body.name, req.body.sleepy
     ], function(result) {
@@ -30,8 +30,8 @@ router.get("/", function(req, res) {
   
     console.log("condition", condition);
   
-    burger.update({
-      sleepy: req.body.sleepy
+    burger.updateOne({
+      sleepy: req.body.sleepy //again update here based on the database
     }, condition, function(result) {
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404
@@ -42,6 +42,7 @@ router.get("/", function(req, res) {
     });
   });
   
+  /*
   router.delete("/api/burgers/:id", function(req, res) {
     let condition = "id = " + req.params.id;
   
@@ -52,9 +53,11 @@ router.get("/", function(req, res) {
       } else {
         res.status(200).end();
       }
+    
     });
   });
-  
+  */
+ 
   // Export routes for server.js to use.
   module.exports = router;
   
